@@ -1,0 +1,360 @@
+/* Existing CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: #F5F5F5; /* Soft White */
+  --text-color: #333333; /* Charcoal */
+  --second-color: #A3B18A; /* Muted Earthy Green */
+  --main-color: #2a2a2a; /* Deep Purple */
+  --big-font: 6rem;
+  --h2-font: 3rem;
+  --p-font: 1.1rem;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 30px 18%;
+  transition: ease .40s;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--bg-color);
+}
+
+/* Existing Navbar Styles */
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  color: var(--bg-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  padding: 10px 22px; /* Adjust padding as needed */
+  border-radius: 4px; /* Optional, can be removed if you prefer sharp corners */
+  position: relative; /* Required for the positioning of ::after */
+  transition: color 0.3s ease; /* Smooth color transition */
+  text-shadow: 1px 1px 1px gray; /* Optional, for text shadow */
+}
+
+/* Hover Effect */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* Align the line at the bottom */
+  left: 0;
+  width: 0;
+  height: 2px; /* Height of the underline */
+  background-color: var(--main-color); /* Color of the underline */
+  transition: width 0.3s ease; /* Smooth underline expansion */
+}
+
+.navbar a:hover::after {
+  width: 100%; /* Expand the underline to full width on hover */
+}
+
+.navbar a:hover {
+  color: var(--main-color); /* Change text color on hover */
+  text-shadow: none; /* Remove text shadow on hover */
+}
+
+/* Menu icon styles */
+#menu-icon {
+  color: var(--bg-color);
+  font-size: 35px;
+  z-index: 10001;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+section {
+  padding: 80px 18%;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(assets/cover.jpg);
+  background-size: cover;
+  display: grid;
+  background-position: center;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+}
+
+.home-text h1 {
+  font-size: var(--big-font);
+  line-height: 1.2;
+  color: var(--bg-color);
+  font-family: "Paytone One", sans-serif;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.home-text p {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 38px;
+  margin-bottom: 50px;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.home-btn {
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 30px;
+  background: #ffffffbf;
+  color: var(--main-color);
+  border-radius: 4px;
+  transition: ease .40s; 
+}
+
+.home-btn:hover {
+  background: var(--bg-color);
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+header.sticky {
+  background: var(--bg-color);
+  padding: 10px 18%;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -;
+}
+
+.sticky .logo {
+  color: var(--text-color);
+}
+
+.sticky .navbar a {
+  color: var(--text-color);
+  text-shadow: none;
+}
+
+.overview-column {
+  flex: 1; /* Allow column to take full width */
+}
+
+.overview-box {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e0e0e0; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  width: 100%; /* Make the box full width */
+}
+
+.overview-box button {
+  background: #212b2a;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+
+.overview-box p {
+  margin-top: 10px;
+}
+
+img {
+  max-width: 100%; /* Responsive images */
+  height: auto; /* Maintain aspect ratio */
+  align-items: center;
+
+}
+
+.sp-t h2 {
+  margin-top: 60px; /* Space above the text */
+  margin-bottom: 20px; /* Space below the text */
+}
+
+.ad-section {
+  width: 360px; /* Set a narrow width for vertical banner */
+  height: 640px; /* Adjust height as needed */
+  position: fixed; /* Keeps it fixed on theright */
+  right: 0; /* Aligns to the right */
+  top: 80px; /* Adjust based on your header */
+  background-color: #f9f9f9; /* Background color for the ad section */
+  padding: 10px; /* Some padding */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.ad-section button {
+  background: #212b2a;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+
+.ad-section img {
+  width: 100%; /* Adjust width to fit within the banner */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+/* Trademark */
+.copyright {
+    background-color: #E0E0E0;
+    padding: 25px; /* Adjusted padding for responsiveness */
+    width: 100%; /* Make sure it uses full width */
+    margin: 0 auto; /* Center the element horizontally */
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Flex container for the list */
+.copyright ul {
+    display: flex;
+    justify-content: center; /* Center the list items horizontally */
+    list-style: none;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Flex items styling */
+.copyright li {
+    padding: 15px; /* Adjust padding if necessary */
+}
+
+/* Media Queries for Responsive Adjustments */
+
+/* Show menu icon on screens 1040px and below */
+@media (max-width: 1040px) {
+  #menu-icon {
+    display: block; /* Show menu icon */
+  }
+
+  .ad-section {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1400px) {
+  header {
+    padding: 17px 3%;
+    transition: .2s;
+  }
+
+  header.sticky {
+    padding: 10px 3%;
+    transition: .2s;
+  }
+
+  :root {
+    --big-font: 4.5rem;
+    --h2-font: 2.3rem;
+    --p-font: 1rem;
+    transition: .2s;
+  }
+
+   #menu-icon {
+    display: none; /* Show menu icon on smaller screens */
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block; /* Show menu icon on smaller screens */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Adjust shadow for smaller screens */
+  }
+
+  .sticky #menu-icon {
+    color: var(--text-color); /* Text color */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Darker shadow when sticky */
+  }
+
+  .home {
+    height: 88vh;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 0;
+    right: -100%; /* Hide the navbar off-screen initially */
+    width: 270px;
+    height: 100vh; /* Use full viewport height */
+    background: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 30px;
+    transition: right 0.5s ease; /* Smooth transition effect */
+  }
+
+  .navbar a {
+    display: block;
+    margin: 1.2rem 0;
+  }
+
+  .sticky .navbar a {
+    color: var(--bg-color);
+  }
+
+  .navbar a:hover {
+    color: var(--text-color);
+  }
+
+  .navbar.open {
+    right: 0; /* Move the navbar into view */
+  }
+
+  .copyright {
+    padding: 20px; /* Adjust padding for medium screens */
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .copyright ul {
+    flex-direction: column; /* Stack list items vertically on smaller screens */
+    align-items: center; /* Center list items */
+  }
+
+  .copyright li {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+    .copyright {
+        padding: 15px; /* Further adjust padding for very small screens */
+    }
+
+    .copyright li {
+        padding: 5px; /* Further reduce padding for very small screens */
+    }
+}
